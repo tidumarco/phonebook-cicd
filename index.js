@@ -23,6 +23,8 @@ app.use(
     ].join(" ");
   })
 );
+
+// eslint-disable-next-line no-unused-vars
 app.get("/", (request, response) => {
   console.log("Test");
 });
