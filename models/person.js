@@ -1,12 +1,11 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-// eslint-disable-next-line no-undef
-const url = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI;
 
-console.log("connecting to", url);
+console.log("connecting to", uri);
 
 mongoose
-  .connect(url)
+  .connect(uri)
   .then(() => {
     console.log("connected to MongoDB");
   })
@@ -30,7 +29,6 @@ const personSchema = new mongoose.Schema({
     required: [true, "User phone number required."],
   },
 });
-
 
 personSchema.set("toJSON", {
   transform: (document, returnedObject) => {
