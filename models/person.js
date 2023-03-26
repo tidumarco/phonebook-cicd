@@ -1,12 +1,14 @@
-import { config } from "dotenv";
-config();
-import { connect, Schema, model } from "mongoose";
+const dotenv = require("dotenv");
+dotenv.config();
+const mongoose = require("mongoose");
 
+// eslint-disable-next-line no-undef
 const uri = process.env.MONGODB_URI;
 
 console.log("connecting to", uri);
 
-connect(uri)
+mongoose
+  .connect(uri)
   .then(() => {
     console.log("connected to MongoDB");
   })
@@ -14,7 +16,7 @@ connect(uri)
     console.log("error connecting to MongoDB:", error.message);
   });
 
-const personSchema = new Schema({
+const personSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -39,4 +41,4 @@ personSchema.set("toJSON", {
   },
 });
 
-export default model("Person", personSchema);
+module.exports = mongoose.model("Person", personSchema);
