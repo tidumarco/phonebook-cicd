@@ -1,5 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
+// eslint-disable-next-line no-undef
 const uri = process.env.MONGODB_URI;
 
 console.log("connecting to", uri);
