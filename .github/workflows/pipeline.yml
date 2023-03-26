@@ -1,4 +1,4 @@
-Name: Phonebook Pipeline
+name: Phonebook Pipeline
 
 on:
   push:
