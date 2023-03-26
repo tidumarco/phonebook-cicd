@@ -24,7 +24,7 @@ app.use(
   })
 );
 app.get("/", (request, response) => {
-  response.send("<h1>Hello World!</h1>");
+  console.log("Test");
 });
 
 app.get("/api/persons", (request, response, next) => {
