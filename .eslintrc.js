@@ -4,7 +4,7 @@ module.exports = {
     commonjs: true,
     es2021: true,
   },
-  extends: "eslint:recommended",
+  extends: ["plugin:cypress/recommended", "eslint:recommended"],
   overrides: [],
   parserOptions: {
     ecmaVersion: "latest",

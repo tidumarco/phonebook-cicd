@@ -15,14 +15,12 @@ jobs:
         run: npm run lint
       - name: Build
         run: npm run build
-      - name: Test
-        run: npm run test
-      # - name: e2e tests
-      #   uses: cypress-io/github-action@v5
-      #   with:
-      #     command: npm run test:e2e
-      #     start: npm run start-prod
-      #     wait-on: http://localhost:8080
+      - name: e2e tests
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run cypress:open
+          start: npm start
+          wait-on: http://localhost:8080
       - name: Deploy app
         uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only

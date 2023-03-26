@@ -12,7 +12,8 @@
     "fix": "eslint --fix",
     "build:dev": "webpack --mode=development",
     "watch": "webpack --watch",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "cypress:open": "cypress open"
   },
   "author": "Marco Tidu",
   "license": "MIT",
@@ -22,7 +23,9 @@
     "@webpack-cli/generators": "^3.0.1",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
+    "cypress": "^12.8.1",
     "eslint": "^8.32.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.5",
     "nodemon": "^2.0.20",
