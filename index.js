@@ -23,6 +23,9 @@ app.use(
     ].join(" ");
   })
 );
+app.get("/test", (request, response) => {
+  response.send("<h1>Hello World!</h1>");
+});
 
 app.get("/api/persons", (request, response, next) => {
   Person.find({})
