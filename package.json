@@ -13,7 +13,8 @@
     "build:dev": "webpack --mode=development",
     "watch": "webpack --watch",
     "serve": "webpack serve",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
   },
   "author": "Marco Tidu",
   "license": "MIT",
