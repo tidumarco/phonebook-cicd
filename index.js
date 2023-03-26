@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
-const Person = require("./models/person");
+const Person = require("./models/person").default;
 const app = express();
 app.use(express.static("build"));
 app.use(express.json());

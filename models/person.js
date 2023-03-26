@@ -1,13 +1,12 @@
-const dotenv = require("dotenv");
-dotenv.config();
-const mongoose = require("mongoose");
+import { config } from "dotenv";
+config();
+import { connect, Schema, model } from "mongoose";
 
 const uri = process.env.MONGODB_URI;
 
 console.log("connecting to", uri);
 
-mongoose
-  .connect(uri)
+connect(uri)
   .then(() => {
     console.log("connected to MongoDB");
   })
@@ -15,7 +14,7 @@ mongoose
     console.log("error connecting to MongoDB:", error.message);
   });
 
-const personSchema = new mongoose.Schema({
+const personSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -40,4 +39,4 @@ personSchema.set("toJSON", {
   },
 });
 
-module.exports = mongoose.model("Person", personSchema);
+export default model("Person", personSchema);
