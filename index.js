@@ -24,11 +24,6 @@ app.use(
   })
 );
 
-// eslint-disable-next-line no-unused-vars
-app.get("/", (request, response) => {
-  console.log();
-});
-
 app.get("/api/persons", (request, response, next) => {
   Person.find({})
     .then((persons) => {
