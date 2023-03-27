@@ -22,7 +22,7 @@ jobs:
         env:
           MONGODB_URI: ${{secrets.MONGODB_URI}}
         with:
-          command: npx cypress run
+          command: npm test:e2e
           start: npm start
           wait-on: http://localhost:8080
       - name: Deploy app
