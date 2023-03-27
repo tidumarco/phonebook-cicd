@@ -18,14 +18,13 @@ jobs:
       - name: Build
         run: npm run build
       - name: e2e tests
-        uses: cypress-io/github-action@v5.5.1
-        env:
-          MONGODB_URI: ${{secrets.MONGODB_URI}}
+        uses: cypress-io/github-action@v5
         with:
           command: npm run test:e2e
+          env:
+            MONGODB_URI: ${{secrets.MONGODB_URI}}
           start: npm start
-          wait-on: http://localhost:8080/
-          timeout-minutes: 2
+          wait-on: http://localhost:8080
       - name: Deploy app
         uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
