@@ -9,6 +9,8 @@ app.use(cors());
 
 app.use(morgan("tiny"));
 
+app.use(express.static("build/dist"));
+
 app.use(
   morgan((tokens, req, res) => {
     return [
@@ -23,14 +25,6 @@ app.use(
     ].join(" ");
   })
 );
-
-app.get("/", (request, response, next) => {
-  Person.find({})
-    .then((persons) => {
-      response.json(persons);
-    })
-    .catch((error) => next(error));
-});
 
 app.get("/api/persons", (request, response, next) => {
   Person.find({})
