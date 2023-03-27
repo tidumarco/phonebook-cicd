@@ -8,7 +8,6 @@ on:
 jobs:
   pipeline:
     runs-on: ubuntu-20.04
-    timeout-minutes: 2
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -26,6 +25,7 @@ jobs:
           command: npm run test:e2e
           start: npm start
           wait-on: http://localhost:8080/
+          timeout-minutes: 2
       - name: Deploy app
         uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
