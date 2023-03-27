@@ -9,7 +9,7 @@ primary_region = "ams"
   release_command = "npm run build"
 
 [env]
-  PORT = "8080"
+  PORT = "3001"
 
 [experimental]
   auto_rollback = true
@@ -19,7 +19,7 @@ primary_region = "ams"
 
 [[services]]
   http_checks = []
-  internal_port = 8080
+  internal_port = 3001
   processes = ["app"]
   protocol = "tcp"
   script_checks = []

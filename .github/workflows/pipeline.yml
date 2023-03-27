@@ -24,7 +24,7 @@ jobs:
         with:
           command: npm test:e2e
           start: npm start
-          wait-on: http://localhost:8080
+          wait-on: http://localhost:3001
       - name: Deploy app
         uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
