@@ -10,7 +10,7 @@ app.use(cors());
 
 app.use(morgan("tiny"));
 // eslint-disable-next-line no-undef
-app.use(express.static(path.join(__dirname, "build", "dist")));
+app.use(express.static(path.join(__dirname, "build", "static")));
 
 app.use(
   morgan((tokens, req, res) => {
